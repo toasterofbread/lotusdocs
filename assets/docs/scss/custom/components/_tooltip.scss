@@ -3,17 +3,10 @@
 //
 
 :root {
-    --tooltip-bg: var(--white);
-    --tooltip-border-color: var(--content-link-color);
-    --tooltip-drop-shadow-color: var(--gray-500);
-    --tooltip-link-color: var(--gray-700);
-}
-
-[data-dark-mode] {
-    --tooltip-bg: var(--dark-alt);
-    --tooltip-border-color: var(--primary-300);
-    --tooltip-drop-shadow-color: var(--gray-900);
-    --tooltip-link-color: var(--gray-500);
+    --tooltip-bg: #{$crust};
+    --tooltip-border-color: #{$crust};
+    --tooltip-drop-shadow-color: var(--content-link-color);
+    --tooltip-link-color: #{$text};
 }
 
 .tooltip {
@@ -25,9 +18,9 @@
 
 .tooltip-inner {
     text-align: left;
-    border: 2px solid var(--tooltip-border-color);
-    border-width: 2px 2px 2px 8px;
-    filter: drop-shadow(4px 4px 5px var(--tooltip-drop-shadow-color));
+    // border: 2px solid var(--tooltip-border-color);
+    // border-width: 2px 2px 2px 8px;
+    filter: drop-shadow(2px 2px 3px var(--tooltip-drop-shadow-color));
     --#{$prefix}tooltip-border-radius: 4px;
 
     a {

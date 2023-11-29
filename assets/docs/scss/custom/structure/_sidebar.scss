@@ -98,7 +98,7 @@
         }
 
         .sidebar-menu {
-            padding: 16px 0 16px 10px;
+            padding: 16px 10px 16px 10px;
             .header-menu {
                 span {
                     font-weight: bold;
@@ -156,14 +156,8 @@
                 a:hover,
                 &.sidebar-dropdown button:hover {
                     background-color: var(--sidebar-dropdown-hover-bg);
-                    border-radius: 4px 0 0 4px;
+                    border-radius: 4px 4px 4px 4px;
                     margin: 4px 0 4px 0;
-                }
-                &:hover,
-                &.active {
-                    i {
-                        background-color: var(--sidebar-menu-active-bg);
-                    }
                 }
                 &.no-icon {
                     > a:before {
@@ -191,9 +185,9 @@
                     }
                 }
                 > button:after {
-                    content: "\e5cc" !important;
+                    content: ">" !important;
                     color: var(--sidebar-text-color);
-                    font-family: 'Material Symbols Outlined';
+                    // font-family: 'Material Symbols Outlined';
                     font-weight: 500;
                     font-size: 22px;
                     position: absolute;
@@ -214,10 +208,9 @@
                     button {
                         font-size: 14px;
                         &:before {
-                            content: var(--sidebar-directory-icon);
+                            content: "~";
                             color: var(--sidebar-text-color);
-                            font-family: 'Material Symbols Outlined';
-                            margin-right: 4px;
+                            margin-right: 2px;
                             font-size: 14px;
                             transition: all 0.3s ease;
                         }
@@ -235,7 +228,7 @@
                 // &:hover,
                 &.current {
                     > button:after {
-                        color: var(--sidebar-primary);
+                        color: var(--sidebar-primary-text);
                     }
                 }
 
@@ -248,14 +241,6 @@
                             font-size: 14px;
                             a {
                                 font-weight: 400;
-                                &:before {
-                                    content: var(--sidebar-file-icon);
-                                    color: var(--sidebar-text-color);
-                                    font-family: 'Material Symbols Outlined';
-                                    margin-right: 4px;
-                                    font-size: 14px;
-                                    transition: all 0.3s ease;
-                                }
                                 .badge,
                                 .label {
                                     float: right;
@@ -314,13 +299,13 @@
             font-weight: 600 !important;
             background-color: var(--sidebar-menu-active-bg);
             border-right: 3px solid var(--primary);
-            border-radius: 4px 0 0 4px;
+            border-radius: 4px 4px 4px 4px;
             margin: 4px 0 4px 0;
         }
 
         // .sidebar-menu li:hover > button,
         .sidebar-menu .sidebar-dropdown.current > button {
-            color: var(--sidebar-primary) !important;
+            color: var(--sidebar-primary-text) !important;
         }
 
         .sidebar-brand {

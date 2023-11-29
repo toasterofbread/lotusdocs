@@ -1,26 +1,19 @@
-<!-- Navbar Start -->
-<header id="topnav">
+<!-- <header id="topnav">
     <div class="container d-flex justify-content-between align-items-center">
-        <!-- Logo container-->
-        <a class="logo" aria-label="Home" href='{{ relLangURL "" }}'>
-            {{ with resources.Get "images/logos/mark.svg" }}
-                {{ .Content | safeHTML }}
-            {{ end }}
+        <a href='{{ with .Site.Params.docs.logoLinkURL }}{{ . }}{{ else }}{{ relLangURL "" }}{{ end }}' aria-label="HomePage" alt="HomePage">
+            <img src="/icon.png" style="height: 40px; aspect-ratio: 1; border-radius: 50%;"></img>
         </a>
-        <!-- End Logo container-->
 
         <div class="d-flex align-items-center">
 
             <div id="navigation">
-                <!-- Navigation Menu -->
                 <ul class="navigation-menu nav-right">
                     {{- range .Site.Menus.primary }}
                     <li><a href="{{ relLangURL .URL }}">{{ .Name }}</a></li>
                     {{ end }}
-                </ul><!--end navigation menu-->
-            </div><!--end navigation-->
+                </ul>
+            </div>
 
-            <!-- Social Links Start -->
             {{ with $.Scratch.Get "social_list" }}
             <ul class="social-link d-flex list-inline mb-0">
                 {{ range . }}
@@ -37,11 +30,9 @@
                 {{ end }}
             </ul>
             {{ end }}
-            <!-- Social Links End -->
 
             <div class="menu-extras ms-3 me-2">
                 <div class="menu-item">
-                    <!-- Mobile menu toggle-->
                     <button class="navbar-toggle btn btn-icon btn-soft-light" id="isToggle" aria-label="toggleMenu" onclick="toggleMenu()">
                         <div class="lines">
                             <span></span>
@@ -49,11 +40,9 @@
                             <span></span>
                         </div>
                     </button>
-                    <!-- End mobile menu toggle-->
                 </div>
             </div>
 
         </div>
-    </div><!--end container-->
-</header><!--end header-->
-<!-- Navbar End -->
+    </div>
+</header> -->

@@ -12,6 +12,7 @@
     border: 0;
     -webkit-transition: all .5s ease;
     transition: all .5s ease;
+    opacity: 0;
 
     .logo {
         float: left;
@@ -165,7 +166,8 @@
     }
 
     &.nav-sticky{
-        background: #fff;
+        opacity: 1;
+        background: $topnav-bg;
         -webkit-box-shadow: 0 0 3px rgba(60,72,88,.15);
         box-shadow: 0 0 3px rgba(60,72,88,.15);
         .navigation-menu {

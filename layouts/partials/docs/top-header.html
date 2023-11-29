@@ -1,21 +1,16 @@
-<!-- Top Header -->
 <div id="top-header" class="top-header d-print-none">
     <div class="header-bar d-flex justify-content-between">
         <div class="d-flex align-items-center">
-            <a href='{{ with .Site.Params.docs.logoLinkURL }}{{ . }}{{ else }}{{ relLangURL "" }}{{ end }}' class="logo-icon me-3" aria-label="HomePage" alt="HomePage">
+            <a href='{{ with .Site.Params.docs.logoLinkURL }}{{ . }}{{ else }}{{ relLangURL "" }}{{ end }}' class="logo-icon me-3" aria-label="HomePage" alt="HomePage" style="margin-right: 20px;">
                 <div class="small">
-                    {{ with resources.Get "images/logos/mark.svg" }}
-                            {{ .Content | safeHTML }}
-                    {{ end }}
+                    <img src="/icon.png" style="max-height: 30px; aspect-ratio: 1; border-radius: 50%;"></img>
                 </div>
                 <div class="big">
-                    {{ with resources.Get "images/logos/logo.svg" }}
-                            {{ .Content | safeHTML }}
-                    {{ end }}
+                    <img src="/icon.png" style="max-height: 30px; aspect-ratio: 1; border-radius: 50%;"></img>
                 </div>
             </a>
             <button id="close-sidebar" class="btn btn-icon btn-soft">
-                <span class="material-icons size-20 menu-icon align-middle">menu</span>
+                <i class="fa-solid fa-bars"></i>
             </button>
             {{ if and (.Site.Params.docsearch.appID) (.Site.Params.docsearch.apiKey) -}}
             <span><div id="docsearch"></div></span>
@@ -28,7 +23,7 @@
                         <div id="suggestions" class="shadow bg-white rounded d-none"></div>
                     </form> -->
                     <button id="flexsearch-button" class="ms-3 btn btn-soft" data-bs-toggle="collapse" data-bs-target="#FlexSearchCollapse" aria-expanded="false" aria-controls="FlexSearchCollapse">
-                        <span class="material-icons size-20 menu-icon align-middle">search</span>
+                        <i class="fa-solid fa-search"></i>
                         <span class="flexsearch-button-placeholder ms-1 me-2 d-none d-sm-block">{{ i18n "search_title" }}</span>
                         <div class="d-none d-sm-block">
                             <span class="flexsearch-button-keys">

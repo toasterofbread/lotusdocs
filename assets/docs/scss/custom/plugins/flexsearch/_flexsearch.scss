@@ -1,17 +1,17 @@
 /* FlexSearch */
 
 :root {
-    --flexsearch-container-bg-color: var(--gray-100);
-    --flexsearch-after-bg-color: var(--primary);
-    --flexsearch-after-color: var(--white);
+    --flexsearch-container-bg-color: #{$base};
+    --flexsearch-after-bg-color: red;
+    --flexsearch-after-color: blue;
     --flexsearch-button-hover-bg-color: none;
-    --flexsearch-key-bg-color: var(--primary);
-    --flexsearch-key-color: #fff;
-    --flexsearch-suggestion-bg-color: var(--white);
-    --flexsearch-suggestion-link-hover-bg-color: #f5f6f7;
-    --flexsearch-suggestion-title-color: var(--primary);
-    --flexsearch-suggestion-title-border-color: var(--gray-300);
-    --flexsearch-suggestion-desc-color: var(--text-default);
+    --flexsearch-key-bg-color: #{$surface0};
+    --flexsearch-key-color: #{$text};
+    --flexsearch-suggestion-bg-color: #{$mantle};
+    --flexsearch-suggestion-link-hover-bg-color: #{$mauve};
+    --flexsearch-suggestion-title-color: #{$text};
+    --flexsearch-suggestion-title-border-color: #{$overlay0};
+    --flexsearch-suggestion-desc-color: #{$subtext1};
 }
 
 [data-dark-mode] {

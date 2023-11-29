@@ -32,7 +32,9 @@
             </div>
         </div>
 
-        <div class="row">
+        {{ $width := .width | default "" }}
+
+        <div class="row" style="width: {{ $width }}; margin: auto;">
             <div class="col-12 mt-4 pt-2">
                 <div class="tab-content" id="pills-tab-{{ $sectionTitle }}Content">
                     {{ range $index, $value := .items }}

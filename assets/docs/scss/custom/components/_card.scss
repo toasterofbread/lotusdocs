@@ -3,13 +3,8 @@
 //
 //card
 :root {
-    --card-title-color: var(--text-default);
-    --card-text-color: var(--text-muted);
-}
-
-[data-dark-mode] {
-    --card-title-color: var(--text-default);
-    --card-text-color: var(--gray-500);
+    --card-title-color: #{$subtext1};
+    --card-text-color: #{$subtext0};
 }
 
 .card {
@@ -30,10 +25,10 @@
 }
 
 .card-title {
-    color: var(--card-title-color);
+    color: var(--card-title-color) !important;
 }
 
 .card-text {
-    color: var(--card-text-color);
+    color: var(--card-text-color) !important;
     font-weight: 500;
 }
