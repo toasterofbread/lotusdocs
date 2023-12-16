@@ -3,9 +3,10 @@
 //
 
 :root {
-    --toc-link-hover-bg-color: var(--gray-300);
-    --toc-mobile-btn-bg-color: var(--gray-100);
-    --toc-mobile-menu-bg-color: var(--white);
+    --toc-link-hover-bg-color: var(--primary);
+    --toc-link-hover-text-color: black;
+    --toc-mobile-btn-bg-color: #{$crust};
+    --toc-mobile-menu-bg-color: #{$base};
     --toc-mobile-link-hover-color: var(--primary);
 }
 
@@ -66,7 +67,7 @@
         scrollbar-width: thin;
         li {
             list-style: none;
-            padding: 0 0 4px 0;
+            padding: 0 0 2px 10px;
             ul {
                 padding-left: 1rem;
             }
@@ -151,6 +152,7 @@
 
     &:hover {
         background-color: var(--toc-link-hover-bg-color);
+        color: var(--toc-link-hover-text-color);
         transition: all 0.1s;
         -webkit-transition: all 0.2s;
     }

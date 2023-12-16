@@ -7,7 +7,7 @@
                     <span class="icon-color d-flex my-3">
                         <i class="{{- .Params.icon | default "" }}"></i>
                         {{ if .Draft }}<span class="badge bg-default ms-2 fs-6 align-middle">DRAFT</span>{{ end }}
-                        {{ if .IsSection }}<i class="material-icons icon-faint align-middle ms-auto" title="Directory">folder</i>{{ end }}
+                        {{ if .IsSection }}<i class="fa-regular fa-folder icon-faint align-middle ms-auto" title="Directory"></i>{{ end }}
                     </span>
                     <div class="card-body p-0 content">
                         <p class="fs-5 fw-semibold card-title mb-1">{{ .Title }}</p>

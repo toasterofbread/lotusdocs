@@ -192,20 +192,20 @@ window.addEventListener('scroll', (ev) => {
 })
 
 // back-to-top
-var mybutton = document.getElementById("back-to-top");
-window.onscroll = function () {
-    scrollFunction();
-};
+// var mybutton = document.getElementById("back-to-top");
+// window.onscroll = function () {
+//     scrollFunction();
+// };
 
-function scrollFunction() {
-    if (mybutton != null) {
-        if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-            mybutton.style.display = "block";
-        } else {
-            mybutton.style.display = "none";
-        }
-    }
-}
+// function scrollFunction() {
+//     if (mybutton != null) {
+//         if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+//             mybutton.style.display = "block";
+//         } else {
+//             mybutton.style.display = "none";
+//         }
+//     }
+// }
 
 function topFunction() {
     document.body.scrollTop = 0;

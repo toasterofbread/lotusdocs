@@ -1,5 +1,5 @@
 :root {
-    --alert-border-color: #dee2e6;
+    --alert-border-color: #{$surface0};
 
     // Default
     --alert-default-bg: #{$base};
