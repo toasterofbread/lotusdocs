@@ -15,6 +15,10 @@
   </i>
   {{- end -}}
   </div>
+  <div>
+  {{ with .Get "title" }}
+  <h6>{{ . | $.Page.RenderString }}</h6>
+  {{- end -}}
   {{ with .Get "text" }}
   <div class="w-100">{{ . | $.Page.RenderString }}</div>
   {{ else }}
@@ -26,4 +30,9 @@
   {{ errorf "No valid text variable or Inner content given"}}
   {{- end -}}
   {{- end -}}
+  
+  {{ with .Get "text2" }}
+  <div class="w-100">{{ . | $.Page.RenderString }}</div>
+  {{- end -}}
+  </div>
 </div>
