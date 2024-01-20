@@ -19,23 +19,6 @@
     --inline-code-border: 1px solid #{$surface0};
 }
 
-[data-dark-mode] {
-
-    --content-icon-color: var(--primary-200);
-    --content-icon-bg: hsl(var(--primary-hsl), 0.15);
-    --content-icon-border: var(--primary-800);
-    --content-link-color: var(--primary-300);
-
-    --ordered-list-bg: var(--gray-700);
-    --ordered-list-color: var(--gray-200);
-    --blockquote-border-color: var(--primary-200);
-
-    --code-block-bg: var(--gray-900);
-    --inline-code-bg: var(--gray-800);
-    --inline-code-border: 1px solid var(--gray-600);
-
-}
-
 .docs-content {
     order: 1;
 }
