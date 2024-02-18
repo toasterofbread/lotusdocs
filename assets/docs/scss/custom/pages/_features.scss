@@ -160,9 +160,10 @@
             color: var(--white) !important;
             .icon-color i,
             .badge,
+            .card-title,
             .para {
-                color: var(--white) !important;
-                opacity: 0.5;
+                color: var(--black) !important;
+                opacity: 0.75;
             }
             .content,
             .icon-color {

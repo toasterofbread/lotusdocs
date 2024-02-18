@@ -20,7 +20,7 @@ $btn-link-hover-color:        var(--#{$prefix}link-hover-color);
     --black: #000000;
 
     --primary: #{$mauve};
-    
+
     --link-color:                              var(--primary);
     --link-decoration:                         underline;
     --link-shade-percentage:                   20%;
@@ -92,8 +92,8 @@ $btn-link-hover-color:        var(--#{$prefix}link-hover-color);
     --dir-right: "\e5da";
 
     // Cards
-    --card-bg: #{$surface0};
-    --card-border-color: #{$overlay2};
+    --card-bg: #{$mantle};
+    --card-border-color: #{$overlay0};
     --card-border-hover-color: #{$mauve};
 
     // Sidebar
