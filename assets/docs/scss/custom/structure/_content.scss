@@ -10,11 +10,11 @@
     --content-icon-border: var(--sidebar-icon-bg);
     --content-link-color: var(--primary);
 
-    --ordered-list-bg: var(--primary);
-    --ordered-list-color: var(--gray-800);
+    --ordered-list-bg: #{$surface0};
+    --ordered-list-color: #{$text};
     --blockquote-border-color: var(--gray-300);
 
-    --code-block-bg: #212d63;
+    --code-block-bg: #{$surface0};
     --inline-code-bg: #{$crust};
     --inline-code-border: 1px solid #{$surface0};
 }

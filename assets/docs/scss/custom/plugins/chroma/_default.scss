@@ -5,9 +5,21 @@
 }
 
 .docs-content .main-content pre {
+    padding: 1rem;
     background-color: var(--code-block-bg) !important;
+    border: 2px solid transparent;
+    transition: border 0.1s;
+    margin-bottom: 1rem;
     code {
         color: #f5fbff;
         background: var(--code-block-bg);
+    }
+    &:hover {
+        border: 2px solid var(--primary);
+    }
+
+    code {
+        border-radius: 0;
+        padding: 0;
     }
 }
