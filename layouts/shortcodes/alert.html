@@ -30,9 +30,26 @@
   {{ errorf "No valid text variable or Inner content given"}}
   {{- end -}}
   {{- end -}}
-  
+
   {{ with .Get "text2" }}
   <div class="w-100">{{ . | $.Page.RenderString }}</div>
   {{- end -}}
+
+  {{ if or (.Get "button1") (.Get "button2") }}
+  <div class="pt-2" style="display: flex; gap: 1rem; justify-content: flex-end;">
+
+  {{ $button1 := .Get "button1" }}
+  {{ if $button1 }}
+  <a href="{{ .Get "button1link" }}"><div class="card card-title" style="padding: 0.5rem 0.5rem">{{ $button1 | markdownify }}</div></a>
+  {{ end }}
+
+  {{ $button2 := .Get "button2" }}
+  {{ if $button2 }}
+  <a href="{{ .Get "button2link" }}"><div class="card card-title" style="padding: 0.5rem 0.5rem">{{ $button2 | markdownify }}</div></a>
+  {{ end }}
+
+  </div>
+  {{ end }}
+
   </div>
 </div>
