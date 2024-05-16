@@ -16,8 +16,12 @@
     const versions_content = document.getElementById("versions-dropdown-content")
 
     versions.forEach(version => {
+        const link = document.createElement("a")
+        link.href = location.href.replace(current_version, version)
+
         const button = document.createElement("button")
 
+        button.style = "text-align: left; width: 100%;"
         button.className = "btn btn-soft"
         button.innerText = version
 
@@ -28,10 +32,8 @@
             button.innerText += " " + {{ site.Params.draft_version_label }}
         }
 
-        button.style = "text-align: left;"
-        button.onclick = () => { location.href = location.href.replace(current_version, version) }
-
-        versions_content.appendChild(button)
+        link.appendChild(button)
+        versions_content.appendChild(link)
     });
 </script>
 
@@ -97,6 +99,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
 
             {{ if and (.Site.Params.docsearch.appID) (.Site.Params.docsearch.apiKey) -}}
