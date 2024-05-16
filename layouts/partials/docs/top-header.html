@@ -1,3 +1,73 @@
+{{ $versions := slice }}
+
+{{ range (where .Site.Pages "Section" "docs") }}
+    {{ if eq .Parent.Path "docs/_index.md" }}
+        {{ $version := (index (split .Path "/") 1) }}
+        {{ $versions = $versions | append $version }}
+    {{ end }}
+{{ end }}
+
+<script type="module">
+    const current_version = window.location.pathname.split("/")[2];
+    document.getElementById("current-version").textContent = current_version
+
+    const versions = JSON.parse("{{ jsonify $versions }}").reverse()
+    const draft_versions = JSON.parse("{{ jsonify site.Params.draft_versions }}")
+    const versions_content = document.getElementById("versions-dropdown-content")
+
+    versions.forEach(version => {
+        const button = document.createElement("button")
+
+        button.className = "btn btn-soft"
+        button.innerText = version
+
+        if (version == {{ site.Params.latest_version }}) {
+            button.innerText += " " + {{ site.Params.latest_version_label }}
+        }
+        if (draft_versions.includes(version)) {
+            button.innerText += " " + {{ site.Params.draft_version_label }}
+        }
+
+        button.style = "text-align: left;"
+        button.onclick = () => { location.href = location.href.replace(current_version, version) }
+
+        versions_content.appendChild(button)
+    });
+</script>
+
+<style>
+.versions-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    position: absolute;
+    min-width: 200px;
+    z-index: 1;
+    transition: max-height 0.2s;
+
+    .card {
+        padding: 12px 16px;
+        background-color: var(--top-header-bg) !important;
+
+        #versions-dropdown-content {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+    }
+}
+
+.versions-dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    max-height: 300px;
+}
+</style>
+
 <div id="top-header" class="top-header d-print-none">
     <div class="header-bar d-flex justify-content-between">
         <div class="d-flex align-items-center">
@@ -9,9 +79,26 @@
                     <img src="/icon.png" style="max-height: 30px; aspect-ratio: 1; border-radius: 50%;"></img>
                 </div>
             </a>
+
             <button id="close-sidebar" class="btn btn-icon btn-soft">
                 <i class="fa-solid fa-bars"></i>
             </button>
+
+            <div class="versions-dropdown ms-3">
+                <button id="show-versions" class="btn btn-icon-wide btn-soft">
+                    <i class="fa-solid fa-code-branch"></i>
+                    <p id="current-version"></p>
+                </button>
+
+                <div class="dropdown-content">
+                    <div class="card">
+                        <div id="versions-dropdown-content">
+                            <p class="card-title">Versions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             {{ if and (.Site.Params.docsearch.appID) (.Site.Params.docsearch.apiKey) -}}
             <span><div id="docsearch"></div></span>
             {{ end }}

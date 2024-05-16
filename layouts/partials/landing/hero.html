@@ -56,7 +56,10 @@
                         {{ with .title }}{{ . }}{{ end }}
                     </h4>
                     {{ with .badge }}
-                    <span class="badge {{ if eq .pill true }}rounded-pill{{ end }} bg-{{ if eq .soft true }}soft-{{ else }}hard-{{ end }}{{ .color }} mb-1" style="height: 100%;">{{ .text }}</span>
+
+                    <span class="badge {{ if eq .pill true }}rounded-pill{{ end }} bg-{{ if eq .soft true }}soft-{{ else }}hard-{{ end }}{{ .color }} mb-1" style="height: 100%;">
+                        {{ replace .text "$latestVersion" site.Params.latest_version }}
+                    </span>
                     {{ end }}
                     </div>
 

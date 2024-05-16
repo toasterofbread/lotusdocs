@@ -159,11 +159,16 @@
         var searchQuery = sanitizeHTML(this.value);
         var results = index.search(searchQuery, {limit: maxResult, enrich: true});
 
+        const current_version = window.location.pathname.split("/")[2];
+
         // flatten results since index.search() returns results for each indexed field
         const flatResults = new Map(); // keyed by href to dedupe results
         for (const result of results.flatMap(r => r.result)) {
-        if (flatResults.has(result.doc.href)) continue;
-        flatResults.set(result.doc.href, result.doc);
+            if (result.doc.href.split("/")[2] !== current_version) {
+                continue;
+            }
+            if (flatResults.has(result.doc.href)) continue;
+            flatResults.set(result.doc.href, result.doc);
         }
 
         suggestions.innerHTML = "";

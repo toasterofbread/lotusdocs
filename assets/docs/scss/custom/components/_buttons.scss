@@ -172,6 +172,18 @@ body .toggle-light {
         color: var(--gray-900);
     }
 
+    &.btn-icon-wide {
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        * {
+            margin-bottom: 0;
+        }
+    }
+
     &.btn-icon {
         height: 36px;
         width: 36px;
