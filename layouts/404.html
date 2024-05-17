@@ -1,15 +1,46 @@
 
 {{ define "main"}}
+      {{- $index := slice -}}
+      {{- range .Site.Pages -}}
+          {{- $index = $index | append .Path -}}
+      {{- end -}}
+
       <script type="module">
-        const split = window.location.pathname.split("/")
+        const latest_version = "{{ site.Params.latest_version }}"
+        const all_pages = JSON.parse("{{ jsonify $index }}")
+        for (let index = 0; index < all_pages.length; index++) {
+          let page = all_pages[index];
+          if (page.endsWith("/_index.md")) {
+            page = page.substr(0, page.length - 10);
+          }
+          else if (page.endsWith(".md")) {
+            page = page.substr(0, page.length - 3);
+          }
+
+          if (!page.startsWith("/")) {
+            page = "/" + page
+          }
+
+          all_pages[index] = page
+        }
+
+        let path = window.location.pathname
+        if (path.endsWith("/")) {
+          path = path.substr(0, path.length - 1)
+        }
+        const split = path.split("/")
 
         if (split[2] === "latest") {
-          split[2] = {{ site.Params.latest_version }}
+          split[2] = latest_version
           window.location.pathname = split.join("/")
+        }
+        else if (all_pages.includes(path.replace("docs/", "docs/" + latest_version + "/"))) {
+          window.location.pathname = path.replace("docs/", "docs/" + latest_version + "/")
         }
         else {
           document.getElementById("404").style.display = "unset"
         }
+
       </script>
 
       <div id="404" class="d-flex flex-column justify-content-center align-items-center four-oh-four" style="display: none !important;">
