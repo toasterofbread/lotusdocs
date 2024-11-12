@@ -11,7 +11,7 @@
                         </span>
                         <p class="fs-5 fw-semibold card-title mb-1">{{ .Title }}</p>
 
-                        {{ if .IsSection }}<i class="fa-regular fa-folder icon-faint align-middle ms-auto" title="Directory"></i>{{ end }}
+                        {{ if .IsSection }}<i class="bx bx-folder icon-faint align-middle ms-auto" title="Directory"></i>{{ end }}
                     </div>
                     <div class="card-body p-0 content">
                         <p class="para card-text mb-0">{{ .Description | truncate (.Site.Params.docs.listDescTrunc | default 100) | markdownify }}</p>

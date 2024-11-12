@@ -29,7 +29,7 @@
     <meta name="email" content="support@aigis.uk" />
     <meta name="website" content="https://lotusdocs.dev" />
     <meta name="Version" content="v0.1.0" />
-    <script src="https://kit.fontawesome.com/df00c5476f.js" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!-- favicon -->
     {{ block "favicon" . }}{{ partialCached (printf "%s/%s" ($.Scratch.Get "pathName") "head/favicon.html") . }}{{ end }}
     {{- partial (printf "%s/%s" ($.Scratch.Get "pathName") "head/opengraph") . }}

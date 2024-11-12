@@ -1,10 +1,10 @@
 {{ $icon_array := dict
-  "primary" "fa-solid fa-circle-info"
-  "info" "fa-solid fa-circle-info"
-  "warning" "fa-solid fa-triangle-exclamation"
-  "success" "fa-solid fa-circle-check"
-  "danger" "fa-solid fa-circle-exclamation"
-  "default" "fa-solid fa-circle-info"
+  "primary" "bx bxs-info-circle"
+  "info" "bx bxs-info-circle"
+  "warning" "bx bxs-error-circle"
+  "success" "bx bxs-check-circle"
+  "danger" "bx bxs-error-circle"
+  "default" "bx bxs-info-circle"
 }}
 <div class="alert alert-{{ with .Get "context" }}{{.}}{{ else }}default{{ end }} d-flex" role="alert">
   <div class="flex-shrink-1 alert-icon">
